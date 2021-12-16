@@ -1,0 +1,13 @@
+.main {
+
+    background-color: #FAFAFA;
+    min-height: 80%;
+    width: 100%;
+    padding: 20px;
+
+    .main__container {
+        display: flex;
+        min-height: inherit;
+        background-color: #FFFFFF;
+    }
+}
