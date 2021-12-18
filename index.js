@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const categoryRoute = require('./Routes/Categories');
 const bannerRoute = require('./Routes/Banners');
+const bookRoute = require('./Routes/Books');
 
 require('dotenv').config();
 app.use(morgan('dev'));
@@ -27,6 +28,7 @@ app.use(cors());
 
 app.use('/api/categories', categoryRoute);
 app.use('/api/banners', bannerRoute);
+app.use('/api/books', bookRoute);
 
 const port = process.env.PORT || 8000;
 

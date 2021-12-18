@@ -2,7 +2,7 @@ const Categories = require('../Models/Categories');
 
 async function getAllCategories(req, res) {
     try {
-        const data = await Categories.find({});
+        const data = await Categories.find({}).select('-books');
         
         data.sort((a, b) => {
             return a.name.localeCompare(b.name);
