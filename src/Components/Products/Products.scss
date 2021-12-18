@@ -2,9 +2,12 @@
     flex: 3;
     min-height: 100%;
     padding: 10px;
+}
 
-    // .products__container {
-    //     background-color: #FFFFFF;
-    // }
-
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
 }

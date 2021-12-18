@@ -3,7 +3,7 @@ import './Footer.scss';
 function Footer() {
     return (
         <div className="footer">
-            This is footer
+            Made with Love ❤️
         </div>
     )
 }
