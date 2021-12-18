@@ -1,9 +1,20 @@
 import './Categories.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from '../../axios';
 
 function Categories () {
 
-    const [categories, setCategories] = useState(['Architecture', 'Arts & Photography', 'Biographies & Memoirs', 'Body, Mind & Spirit', 'Business & Economics', 'Children & Teens', 'Computer & Internet', 'Cookery, Food & Wine', 'Dictionaries & Language', 'Economics, finance, business & management', 'English Language Teaching', 'Environment & Geography', 'Fiction', 'History & Humanities', 'Law', 'Lifestyle', 'Literature & literary studies', 'Medicine', 'Music', 'Nursing', 'Parenting, Family & Health', 'Politics & Current Events', 'Project management', 'Public administration', 'References & Encyclopaedias', 'Religion & Spirituality', 'Science & Mathematics', 'Self Help & Personal Development', 'Society & social sciences', 'Society & social sciences', 'Sports', 'Technology & Engineering', 'Travel & holiday'])
+    const [categories, setCategories] = useState([])
+
+    async function getCategories() {
+        const categoriesData = await axios.get('/api/categories');
+        const categories = categoriesData.data;
+        setCategories(categories);
+    }
+
+    useEffect(()=>{
+        getCategories();
+    },[])
 
     return (
         <div className="categories">
@@ -15,7 +26,7 @@ function Categories () {
                     categories.map((category) => {
                         return (
                         <div className="category">
-                            {category}
+                            {category.name}
                         </div>
                     )})
                 }
