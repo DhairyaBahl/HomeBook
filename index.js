@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const categoryRoute = require('./Routes/Categories');
+const bannerRoute = require('./Routes/Banners');
 
 require('dotenv').config();
 app.use(morgan('dev'));
+app.use(cors());
 
 (async()=>{
 
@@ -23,6 +26,7 @@ app.use(morgan('dev'));
 })();
 
 app.use('/api/categories', categoryRoute);
+app.use('/api/banners', bannerRoute);
 
 const port = process.env.PORT || 8000;
 

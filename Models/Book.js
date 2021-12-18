@@ -10,13 +10,21 @@ const bookSchema = new mongoose.Schema({
         required: true
     },
     price: {
-        type: Number,
+        type: String,
         required: true
     },
     imageUrl : {
         type: String,
         required: true
     },
+    author : {
+        type: String,
+        required: true
+    },
+    category : {
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('Book', bookSchema);

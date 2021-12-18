@@ -25,13 +25,27 @@ async function addData() {
 
 }
 
+async function emptyCategories() {
+    try {
+        const categories = await Categories.find({});
+        for(category of categories) {
+            delete category.books
+            await category.save();
+        }
+
+        process.exit();
+    }
+    catch {}
+}
+
 (async function () {
 
     try {
         console.log("Connecting to MongoDB...");
         await mongoose.connect(process.env.MONGO_CONNECTION_STRING);
         console.log("Connected to MongoDB");
-        addData();
+        // addData();
+        emptyCategories();
     }
     catch {
         console.log("Unable to connect to MongoDB");
