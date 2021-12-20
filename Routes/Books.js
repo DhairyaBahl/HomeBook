@@ -5,4 +5,8 @@ router.get('/', BooksController.getAllBooks);
 
 router.get('/random', BooksController.getRandomBooks);
 
+router.get('/category/:categoryId', BooksController.getBooksForCategory);
+
+router.get('/:id', BooksController.getBookById);
+
 module.exports = router;

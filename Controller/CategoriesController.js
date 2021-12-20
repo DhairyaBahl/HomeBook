@@ -16,6 +16,18 @@ async function getAllCategories(req, res) {
     }
 }
 
+async function getCategoryById(req, res) {
+    try {
+        const data = await Categories.findById(req.params.id);
+
+        res.send(data);
+    }
+    catch {
+        res.status(500).send();
+    }
+}
+
 module.exports = {
-    getAllCategories
+    getAllCategories,
+    getCategoryById
 }
