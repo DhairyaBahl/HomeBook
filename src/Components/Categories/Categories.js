@@ -1,15 +1,21 @@
 import './Categories.scss';
 import { useState, useEffect } from 'react';
 import axios from '../../axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
-function Categories () {
+function Categories (props) {
 
     const [categories, setCategories] = useState([])
+    const navigate = useNavigate();
 
     async function getCategories() {
         const categoriesData = await axios.get('/api/categories');
         const categories = categoriesData.data;
         setCategories(categories);
+    }
+
+    function categoryClicked(categoryId) {
+        navigate(`/category/${categoryId}`);
     }
 
     useEffect(()=>{
@@ -25,8 +31,8 @@ function Categories () {
                 {
                     categories.map((category) => {
                         return (
-                        <div className="category">
-                            {category.name}
+                        <div className={`category ${category._id === props.categoryId && 'category--active'}`} key = {categories._id}>
+                            <span onClick={()=>categoryClicked(category._id)}>{category.name}</span>
                         </div>
                     )})
                 }

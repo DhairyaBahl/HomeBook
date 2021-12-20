@@ -107,10 +107,13 @@
             background-color: black;
             font-weight: bold;
             font-size: 16px;
+            outline: none;
+            border: 1px solid gray;
 
             &:hover {
-                color: rgb(6, 224, 224);
+                // color: rgb(6, 224, 224);
                 border-radius: 1px solid black;
+                border-color: white;
             }
         }
 

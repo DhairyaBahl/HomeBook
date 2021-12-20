@@ -1,0 +1,83 @@
+.book__page {
+    background-color: #FAFAFA;
+    min-height: 80vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .book__page__card {
+        width: 100%;
+        padding: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .book__page__left__container {
+            padding: 20px 30px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .book__page__image {
+
+                cursor: pointer;
+                transition: transform 0.5s;
+    
+                &:hover {
+                    transform: scale(1.03);
+                }
+            }
+            
+            .book_page_price {
+                font-size: 2rem;
+                margin-top: 10px;
+                font-weight: bold;
+                color: red;
+            }
+
+            .book__page__buttons {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 20px;
+
+                button {
+                    border: none;
+                    outline: none;
+                    padding: 10px;
+                    margin: 0px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    background-color: #e50914;
+                    color: white;
+
+                    &:hover {
+                        background-color: #f50914;
+                    }
+                }
+            }
+        }
+
+        .book__page__info {
+            // border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .book__page__title {
+                display: flex;
+                justify-content: center;
+            }
+
+            .book__page__description {
+                padding: 20px;
+                max-width: 50vw;
+                font-size: 20px;
+            }
+        }
+    }
+}

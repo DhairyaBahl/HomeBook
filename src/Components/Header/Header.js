@@ -1,10 +1,18 @@
 import './Header.scss';
 import SearchIcon from '@material-ui/icons/Search';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+    const navigate = useNavigate();
+
+    function headerClicked() {
+        navigate('/home');
+    }
+
     return (
         <div className = "header">
-            <div className="header__left">
+            <div className="header__left" onClick={headerClicked}>
                 <div className = "header__title"> BOOK STORE </div>
             </div>
             <div className="header__center">
